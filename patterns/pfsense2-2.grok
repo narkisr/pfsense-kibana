@@ -19,6 +19,8 @@
 # (%{radius_LOG}) (%{radius_DET}): \[(%{radius_USER})/(%{radius_AUTH})\] (%{radius_NAST}) (%{radius_CLIENT})\)
 # rlm_(%{radius_LM}): (%{radius_LM_DET})
 #
+
+# PFSENSE_LOG_DATA (%{INT:rule}),(%{INT:sub_rule}),,(%{INT:tracker}),(%{WORD:iface}),(%{WORD:reason}),(%{WORD:action}),(%{WORD:direction}),(%{INT:ip_ver}),
 PFSENSE_LOG_DATA (%{INT:rule}),(%{INT:sub_rule})?,,(%{INT:tracker}),(%{WORD:iface}),(%{WORD:reason}),(%{WORD:action}),(%{WORD:direction}),(%{INT:ip_ver}),
 PFSENSE_IP_SPECIFIC_DATA (%{PFSENSE_IPv4_SPECIFIC_DATA}|%{PFSENSE_IPv6_SPECIFIC_DATA})
 PFSENSE_IPv4_SPECIFIC_DATA (%{BASE16NUM:tos}),,(%{INT:ttl}),(%{INT:id}),(%{INT:offset}),(%{WORD:flags}),(%{INT:proto_id}),(%{WORD:proto}),
