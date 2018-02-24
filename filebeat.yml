@@ -1,0 +1,17 @@
+filebeat.prospectors:
+  - paths:
+      - /var/log/snort/*/alert
+    type: log
+    tags: ["snort"]
+output:
+  logstash:
+    hosts: ["192.168.3.205:5044"]
+    # Optional TLS. By default is off.
+    tls:
+      # List of root certificates for HTTPS server verifications
+      #certificate_authorities: ["/etc/pki/root/ca.pem"]
+      certificate_authorities: ["/etc/filebeat/logstash-forwarder.crt"]
+      # Certificate for TLS client authentication
+      #certificate: "/etc/pki/client/cert.pem"
+      insecure: true
+
